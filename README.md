@@ -42,24 +42,67 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
+```
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
+^d
 
+```
 
 
 cat < file2
 ## OUTPUT
+```
+anil aggarwal
+barun sengupta
+c.k. shukla
+lalit chowdury
+s.n. dasgupta
+^d
 
+```
 
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
- 
+ ```
+file1 file2 differ: byte 1, line 1
+
+```
 comm file1 file2
  ## OUTPUT
+```
+	anil aggarwal
+	barun sengupta
+chanchal singhvi
+		c.k. shukla
+	lalit chowdury
+		s.n. dasgupta
+comm: file 2 is not in sorted order
+	^d
+sumit chakrobarty
+comm: file 1 is not in sorted order
+^d
+comm: input is not in sorted order
 
+```
  
 diff file1 file2
 ## OUTPUT
+```
+1c1,2
+< chanchal singhvi
+---
+> anil aggarwal
+> barun sengupta
+2a4
+> lalit chowdury
+4d5
+< sumit chakrobarty
 
+```
 
 #Filters
 
@@ -82,67 +125,133 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
+```
+Hel
+Thi
 
+```
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
 
-
+```
+1001 
+1002 
+1003 
+```
 
 cut -d "|" -f 2 file22
 ## OUTPUT
+```
+Ram 
+ tom 
+ Joe 
 
 
-cat < newfile 
+```
+
+cat > newfile 
 ```
 Hello world
 hello world
 ^d
 ````
-cat > newfile 
+cat < newfile 
+```
 Hello world
 hello world
- 
+ ```
+
 grep Hello newfile 
 ## OUTPUT
 
+```
+Hello world
 
+```
 
 grep hello newfile 
 ## OUTPUT
 
+```
+hello world
 
+```
 
 
 grep -v hello newfile 
 ## OUTPUT
+```
+Hello world
 
+```
 
 
 cat newfile | grep -i "hello"
 ## OUTPUT
 
+```
+Hello world
+hello world
 
+```
 
 
 cat newfile | grep -i -c "hello"
 ## OUTPUT
 
-
+```
+2
+```
 
 
 grep -R ubuntu /etc
 ## OUTPUT
 
-
+```
+grep: unrecognized option: R
+BusyBox v1.31.1 () multi-call binary.
+ 
+Usage: grep [-HhnlLoqvsriwFE] [-m N] [-A/B/C N] PATTERN/-e PATTERN.../-f FILE [F
+ILE]...
+ 
+Search for PATTERN in FILEs (or stdin)
+ 
+        -H      Add 'filename:' prefix
+        -h      Do not add 'filename:' prefix
+        -n      Add 'line_no:' prefix
+        -l      Show only names of files that match
+        -L      Show only names of files that don't match
+        -c      Show only count of matching lines
+        -o      Show only the matching part of line
+        -q      Quiet. Return 0 if PATTERN is found, 1 otherwise
+        -v      Select non-matching lines
+        -s      Suppress open and read errors
+        -r      Recurse
+        -i      Ignore case
+        -w      Match whole words only
+        -x      Match whole lines only
+        -F      PATTERN is a literal (not regexp)
+        -E      PATTERN is an extended regexp
+        -m N    Match up to N times per file
+        -A N    Print N lines of trailing context
+        -B N    Print N lines of leading context
+        -C N    Same as '-A N -B N'
+        -e PTRN Pattern to match
+        -f FILE Read pattern from file		
+```
 
 grep -w -n world newfile   
 ## OUTPUT
+```
+1:Hello world
+2:hello world
 
+```
 
-cat < newfile 
+cat > newfile 
 ```
 Hello world
 hello world
@@ -152,7 +261,7 @@ Linux is best in this World
 ^d
 ```
 
-cat > newfile
+cat < newfile
 ```
 Hello world
 hello world
@@ -163,59 +272,80 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
-
+```
+Hello world
+hello world
+```
 
 
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
 
+```
+Hello world
+hello world
 
+```
 
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
 
-
+```
+Hello world
+hello world
+```
 
 
 egrep '(^hello)' newfile 
 ## OUTPUT
 
+```
+hello world
 
+```
 
 egrep '(world$)' newfile 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/2ed48502-246f-4cef-b7d8-4eccb3c98905)
 
 
 egrep '(World$)' newfile 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/a3c2af31-75ae-4477-8b27-5c6bb703a6b8)
 
 
 egrep '((W|w)orld$)' newfile 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/64f9fb9b-445d-4913-a2d4-7e761e3f6f47)
 
 
 
 egrep '[1-9]' newfile 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/4905b2d5-5d99-4596-b917-72bfd88ca8bd)
 
 
 egrep 'Linux.*world' newfile 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/3aebb884-6a87-4332-8529-ef021af5dfba)
 
 
 egrep 'Linux.*World' newfile 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/48e21033-66de-4f51-a5f7-5d9da96c9627)
 
 egrep l{2} newfile
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/89b164ca-3076-4f6d-8a0e-894dc4ffb95a)
 
 
 egrep 's{1,2}' newfile
 ## OUTPUT 
+![image](https://github.com/user-attachments/assets/9a185a48-ff73-409c-a906-1de0ba459b94)
 
 
 cat > file23
@@ -234,80 +364,177 @@ cat > file23
 
 sed -n -e '3p' file23
 ## OUTPUT
+```
+1002 | tom |  5000 | Admin
 
-
+```
 
 sed -n -e '$p' file23
 ## OUTPUT
 
+```
+1001 | Ram | 10000 | HR
 
+```
 
 sed  -e 's/Ram/Sita/' file23
 ## OUTPUT
 
+```
+1001 | Sita | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Sita | 10000 | HR
 
-
+```
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
 
+```
+1001 | Ram | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Ram | 10000 | HR
 
+```
 
 sed  '/tom/s/5000/6000/' file23
 ## OUTPUT
 
+```
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom |  6000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Ram | 10000 | HR
 
+```
 
 sed -n -e '1,5p' file23
 ## OUTPUT
 
+```
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
 
+```
 
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
 
+```
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
 
+```
 
 
 sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
 
-
-
+```
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+```
 seq 10 
 ## OUTPUT
 
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
 
+```
 
 seq 10 | sed -n '4,6p'
 ## OUTPUT
+```
+4
+5
+6
 
+```
 
 
 seq 10 | sed -n '2,~4p'
 ## OUTPUT
+```
+2
+3
+4
 
+```
 
 
 seq 3 | sed '2a hello'
 ## OUTPUT
+```
+1
+2
+hello
+3
 
+```
 
 
 seq 2 | sed '2i hello'
 ## OUTPUT
+```
+1
+hello
+2
 
+```
 
 seq 10 | sed '2,9c hello'
 ## OUTPUT
+```
+1
+hello
+10
 
+```
 
 sed -n '2,4{s/^/$/;p}' file23
 ## OUTPUT
 
+```
+$1001 | Ram | 10000 | HR
+$1002 | tom |  5000 | Admin
+$1003 | Joe |  7000 | Developer
 
+```
 
 sed -n '2,4{s/$/*/;p}' file23
+## OUTPUT
+```
+1001 | Ram | 10000 | HR*
+1002 | tom |  5000 | Admin*
+1003 | Joe |  7000 | Developer*
 
+```
 
 #Sorting File content
 cat > file21
@@ -320,7 +547,14 @@ cat > file21
 ``` 
 sort file21
 ## OUTPUT
+```
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1004 | Sit |  7000 | Dev
+1005 | Sam |  5000 | HR
 
+```
 
 cat > file22
 ```
@@ -333,22 +567,38 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
+```
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
 
+```
 
 
 #Using tr command
 
 cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
-
-cat < urllist.txt
+```
+1001 | RAM | 10000 | HR
+1001 | RAM | 10000 | HR
+1002 | TOM |  5000 | ADMIN
+1003 | JOE |  7000 | DEVELOPER
+1005 | SAM |  5000 | HR
+1004 | SIT |  7000 | DEV
+1003 | JOE |  7000 | DEVELOPER
+1001 | RAM | 10000 | HR
+```
+cat > urllist.txt
 ```
 www. yahoo. com
 www. google. com
 www. mrcet.... com
 ^d
  ```
-cat > urllist.txt
+cat < urllist.txt
 ```
 www. yahoo. com
 www. google. com
@@ -357,17 +607,39 @@ www. mrcet.... com
 cat urllist.txt | tr -d ' '
  ## OUTPUT
 
+```
+www.yahoo.com
+www.google.com
+www.mrcet....com
 
+```
  
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
-
+```
+www.yahoo.com
+www.google.com
+www.mrcet.com
+```
 
 
 #Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
-
+```
+bench.py
+file1
+file11
+file2
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
+```
 
 mkdir backupdir
  
@@ -375,20 +647,54 @@ mv backup.tar backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
-
+```
+drwxr-xr-x root/root         0 2024-08-16 10:12:02 backupdir/
+-rw-r--r-- root/root     13312 2024-08-16 10:10:04 backupdir/backup.tar
+-rw-r--r-- root/root       114 2020-07-05 23:17:07 bench.py
+-rw-r--r-- root/root        61 2024-08-16 09:48:52 file1
+-rw-r--r-- root/root        29 2024-08-16 09:52:03 file11
+-rw-r--r-- root/root        70 2024-08-16 09:49:11 file2
+-rw-r--r-- root/root       131 2024-08-16 10:06:47 file21
+-rw-r--r-- root/root       155 2024-08-16 10:07:30 file22
+-rw-r--r-- root/root       210 2024-08-16 10:02:59 file23
+-rw-r--r-- root/root        76 2020-07-03 14:45:56 hello.c
+-rw-r--r-- root/root        22 2020-06-26 14:57:33 hello.js
+-rw-r--r-- root/root        96 2024-08-16 09:57:21 newfile
+-rw-r--r-- root/root       151 2020-07-05 23:19:13 readme.txt
+-rw-r--r-- root/root        52 2024-08-16 10:09:28 urllist.txt
+```
 
 tar -xvf backup.tar
 ## OUTPUT
 
+```
+backupdir/
+backupdir/backup.tar
+bench.py
+file1
+file11
+file2
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
+```
 gzip backup.tar
 
 ls .gz
 ## OUTPUT
- 
+ ![image](https://github.com/user-attachments/assets/c4593980-2189-4776-9637-a1cab756655d)
+
 gunzip backup.tar.gz
 ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/2a6ff2c0-1890-4545-a70a-24b2e3193318)
+
+
 # Shell Script
 ```
 echo '#!/bin/sh' > my-script.sh
@@ -397,6 +703,8 @@ echo 'echo Hello World‘; exit 0 >> my-script.sh
 chmod 755 my-script.sh
 ./my-script.sh
 ## OUTPUT
+
+![image](https://github.com/user-attachments/assets/cc845e6f-e162-4625-b356-de8f2678876e)
 
  
 cat << stop > herecheck.txt
@@ -409,7 +717,12 @@ stop
 
 cat herecheck.txt
 ## OUTPUT
+```
+hello in this world
+i cant stop
+for this non stop movement
 
+```
 
 cat < scriptest.sh 
 ```bash
@@ -448,29 +761,41 @@ chmod 777 scriptest.sh
 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/4a51fd6c-6400-463d-8d94-b172a33de3bf)
+
  
 ls file1
 ## OUTPUT
-
+```
+file1
+```
 echo $?
 ## OUTPUT 
+```
+0
+
+```
+
 ./one
 bash: ./one: Permission denied
  
 echo $?
 ## OUTPUT 
- 
+![image](https://github.com/user-attachments/assets/3a43cb91-bdd5-46b7-967d-fb35ad02fe4d)
+
 abcd
  
 echo $?
  ## OUTPUT
+![image](https://github.com/user-attachments/assets/fbe4e341-6922-4c34-9fd4-08496299fb9d)
 
 
  
 # mis-using string comparisons
 
 cat < strcomp.sh 
-```bash
+```
+bash
 \#!/bin/bash
 val1=baseball
 val2=hockey
@@ -484,7 +809,8 @@ fi
 ```
 
 cat strcomp.sh 
-```bash
+```
+bash
 \#!/bin/bash
 val1=baseball
 val2=hockey
@@ -495,15 +821,19 @@ else
 echo "$val1 is less than $val2"
 fi
 ```
-##OUTPUT
+## OUTPUT
 
+![image](https://github.com/user-attachments/assets/92d3dea9-6e9e-4ee1-b8f1-eb2ae2b31e46)
 
 
 chmod 755 strcomp.sh
  
 ./strcomp.sh 
 ## OUTPUT
+```
+baseball is less than hockey
 
+```
 
 # check file ownership
 cat < psswdperm.sh 
@@ -530,6 +860,8 @@ fi
  ```
 ./psswdperm.sh
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/3b47acbb-facc-4a3d-983e-ef65e788ca50)
+
 
 # check if with file location
 cat>ifnested.sh 
@@ -577,6 +909,7 @@ fi
 ./ifnested.sh 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/4fb578ef-41ef-440f-aad7-b259d71b5a07)
 
 
 # using numeric test comparisons
@@ -619,7 +952,9 @@ fi
 $ chmod 755 iftest.sh
  
 $ ./iftest.sh 
-##OUTPUT
+## OUTPUT
+![image](https://github.com/user-attachments/assets/ca6baf69-6ea5-4aae-9bc3-73d7696ad13a)
+
 
 # check if a file
 cat > ifnested.sh 
@@ -668,10 +1003,12 @@ fi
 $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
-##OUTPUT
+## OUTPUT
+![image](https://github.com/user-attachments/assets/9a0b3da5-520b-437a-b584-117a41746f52)
+
 
 # looking for a possible value using elif
-cat elifcheck.sh 
+cat > elifcheck.sh 
 ```bash
 \#!/bin/bash
 if [ $USER = Ram ]
@@ -697,6 +1034,7 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/2b0d26d1-de93-4d64-a1a1-1ecf838cadf0)
 
 
 # testing compound comparisons
@@ -713,6 +1051,7 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/5b1ab1af-5112-4ea4-a2a4-c5c8dab30c3e)
 
 # using the case command
 cat >casecheck.sh 

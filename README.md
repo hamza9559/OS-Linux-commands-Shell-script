@@ -1071,6 +1071,27 @@ esac
 $ chmod 755 casecheck.sh 
  
 $ ./casecheck.sh 
+
+```
+Welcome Ram/Rahim
+Please enjoy your visit
+Special testing account
+gganesh, Do not forget to logout when you're done
+Sorry, you are not allowed here
+cat > whiletest
+
+#!/bin/bash
+#while command test
+var1=10
+while [ $var1 -gt 0 ]
+do
+echo $var1
+var1=$[ $var1 - 1 ]
+done
+$ chmod 755 whiletest.sh
+
+$ ./whiletest.sh
+```
  
 cat > whiletest
 ```bash
@@ -1086,8 +1107,11 @@ done
 $ chmod 755 whiletest.sh
  
 $ ./whiletest.sh
+
  
- 
+![309350923-81d3e9d1-aef2-4da1-889e-ace086eb57ee](https://github.com/user-attachments/assets/2f41919c-82f8-4291-a6ed-eebaa19e1e9c)
+
+
 cat untiltest.sh 
 ```bash
 \#using the until command
@@ -1099,7 +1123,9 @@ var1=$[ $var1 - 25 ]
 done
 ``` 
 $ chmod 755 untiltest.sh
- 
+
+![309350992-7f3f4232-c556-487d-845d-36ad26360a71](https://github.com/user-attachments/assets/29820e40-d26b-4121-a6c7-b0169f4dc70b)
+
  
  
 cat forin1.sh 
@@ -1113,7 +1139,9 @@ done
  ```
  
 $ chmod 755 forin1.sh
- 
+
+ ![309351099-00883fb1-6489-4163-99fc-b750d8b77ef1](https://github.com/user-attachments/assets/5855ca5a-927c-43b2-b0c5-79f6ad32182d)
+
  
 cat forin2.sh 
 ```bash
@@ -1126,20 +1154,10 @@ done
  ```
  
 $ chmod 755 forin2.sh
- 
-cat forin2.sh 
-```bash
-\#!/bin/bash
-\# another example of how not to use the for command
-for test in I don't know if this'll work
-do
-echo “word:$test”
-done
-```
-$ chmod 755 forin2.sh
- 
-$ ./forin2.sh 
- 
+
+ ![309351204-848dac7e-3175-4701-bf4f-851386219d97](https://github.com/user-attachments/assets/4522ec21-c799-444a-b971-ea465054d7d4)
+
+
 cat forin3.sh 
 ```bash
 \#!/bin/bash
@@ -1150,7 +1168,10 @@ echo "word:$test"
 done
 ```
 $ ./forin3.sh 
- 
+
+ ![309351469-29b13d20-62ba-4b80-8206-c4222a39156f](https://github.com/user-attachments/assets/00bf7f78-82cd-4c2f-bfbc-0703787433b0)
+
+
 cat forin1.sh 
 ```bash
 #!/bin/bash
@@ -1161,6 +1182,9 @@ echo The next state is $test
 done
 ```
 $ chmod 755 forin1.sh
+
+![309350629-ca9c03f0-7d68-4586-9a4d-74bc315f2476](https://github.com/user-attachments/assets/5ff07273-bd1b-467b-bcf8-6c7dc8248663)
+
 
 ## OUTPUT
 cat forinfile.sh 
@@ -1182,6 +1206,9 @@ Warangal
 Adilabad
 Bhadrachalam
 Khammam
+![309352007-b87b1e50-b514-47b1-a331-cb30ed9cb224](https://github.com/user-attachments/assets/522607af-927c-4eec-a0b5-88ac61b67730)
+
+
 
 ## OUTPUT
 
@@ -1197,6 +1224,10 @@ done
 ````
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
+
+![309352096-4f0c3e69-7c5a-4776-887e-2fcabb80c203](https://github.com/user-attachments/assets/5517b990-6870-487d-8e23-303fd00d2191)
+
+
 ## OUTPUT
 
 cat forctype1.sh 
@@ -1209,7 +1240,11 @@ echo "$a - $b"
 done
 ```
 $ chmod 755 forctype.sh
-$ ./forctype1.sh 
+$ ./forctype1.sh
+
+![309352128-b5770276-5696-4194-ac63-87877583c233](https://github.com/user-attachments/assets/2caf1de5-afca-4793-a39f-2cbf0ff67ccc)
+
+
 ## OUTPUT
 
 cat fornested1.sh 
@@ -1230,6 +1265,8 @@ $ chmod 755 fornested1.sh
 $ ./fornested1.sh 
  ## OUTPUT
 
+![309352154-8fe0ee36-6320-41e3-8fa6-0712430dcfbd](https://github.com/user-attachments/assets/9eb60a24-e9b7-4d3c-a9ab-ab4aa9991e42)
+
  
 cat forbreak.sh 
 ```bash
@@ -1247,10 +1284,16 @@ echo "The for loop is completed“
 ```
 ## OUTPUT
 
+![309352213-e936aa33-eb93-4f40-a02a-c6a049b62b56](https://github.com/user-attachments/assets/260870bb-05d0-48cb-8355-36d77d10c6d6)
+
+
 $ chmod 755 forbreak.sh
  
 $ ./forbreak.sh 
- 
+
+ ![309352400-eb338c35-92de-41f7-b849-38e992330a68](https://github.com/user-attachments/assets/b0a3dad5-2934-4da8-905f-c68c7e65cfbc)
+
+
 cat forbreak.sh 
 ```bash
 #!/bin/bash
@@ -1286,6 +1329,8 @@ $ chmod 755 exread.sh
 $ ./exread.sh 
 ## OUTPUT
 
+![309352771-c356b6f6-e74a-42c1-9f9f-6ed4474fcbd2](https://github.com/user-attachments/assets/a95223bc-57b4-46be-961a-d0eb5134c1f0)
+
 
  cat exread1.sh
 ```bash
@@ -1298,6 +1343,7 @@ $ chmod 755 exread1.sh
 
 ## OUTPUT
 
+![309352865-6df3bd1f-1c31-40de-a208-c222cd15bbf9](https://github.com/user-attachments/assets/237d99b8-6c3d-4b28-b66a-738ac19e0561)
 
 
 $ ./exread1.sh 
@@ -1319,9 +1365,8 @@ fi
 ```
 ## OUTPUT
  ./funcex.sh 
-
- 
  ./funcex.sh 1 2
+
 
  
 cat argshift.sh
@@ -1333,6 +1378,8 @@ cat argshift.sh
 done
 ```
 $ chmod 777 argshift.sh
+
+![309352974-405693cf-99d3-43a1-be48-e550763260de](https://github.com/user-attachments/assets/a4d79bcd-d1a0-4709-a625-f5b768dbff3f)
 
 ## OUTPUT
 $ ./argshift.sh 1 2 3
@@ -1350,9 +1397,13 @@ for (( i=0;i<$ELEMENTS;i++)); do
     echo ${args[${i}]} 
 done
 ```
-$ chmod 777 argshift.sh
 ## OUTPUT
+$ chmod 777 argshift.sh
+
 $ ./argshift.sh 1 2 3
+
+![309353031-74e4b687-6cc5-429b-b993-ad7db8f077f6](https://github.com/user-attachments/assets/008412e9-0c26-4dab-b3d0-af9a55aa3d7d)
+
  
 cat argshift.sh
 ```bash
@@ -1397,6 +1448,9 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
+
+![309353118-b13086bf-891d-40e8-953e-eb519fb98979](https://github.com/user-attachments/assets/adbafc9e-5f6e-4da9-b43a-aa0de9798a9c)
+
  
 cat > palindrome.sh
 ```bash
@@ -1424,6 +1478,8 @@ else
 fi
 ```
 ## OUTPUT 
+
+![309353432-27199787-e397-4b51-b87d-e4736a1615fa](https://github.com/user-attachments/assets/1f53a7db-50b4-4152-8dfd-a1501bde1dfb)
 
 
 # RESULT:
